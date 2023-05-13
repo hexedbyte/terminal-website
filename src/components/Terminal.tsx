@@ -18,7 +18,6 @@ import {
   MobileSpan,
   Wrapper,
 } from "./styles/Terminal.styled";
-import { argTab } from "../utils/funcs";
 
 type Command = {
   cmd: string;
@@ -27,18 +26,10 @@ type Command = {
 }[];
 
 export const commands: Command = [
-  { cmd: "about", desc: "about Sat Naing", tab: 8 },
   { cmd: "clear", desc: "clear the terminal", tab: 8 },
-  { cmd: "echo", desc: "print out anything", tab: 9 },
-  { cmd: "education", desc: "my education background", tab: 4 },
   { cmd: "email", desc: "send an email to me", tab: 8 },
-  { cmd: "gui", desc: "go to my portfolio in GUI", tab: 10 },
   { cmd: "help", desc: "check available commands", tab: 9 },
-  { cmd: "history", desc: "view command history", tab: 6 },
-  { cmd: "projects", desc: "view projects that I've coded", tab: 5 },
-  { cmd: "pwd", desc: "print current working directory", tab: 10 },
-  { cmd: "socials", desc: "check out my social accounts", tab: 6 },
-  { cmd: "themes", desc: "check available themes", tab: 7 },
+  { cmd: "contact", desc: "check out our social accounts", tab: 6 },
   { cmd: "welcome", desc: "display hero section", tab: 6 },
   { cmd: "whoami", desc: "about current user", tab: 7 },
 ];
@@ -118,25 +109,6 @@ const Terminal = () => {
           hintsCmds = [...hintsCmds, cmd];
         }
       });
-
-      const returnedHints = argTab(inputVal, setInputVal, setHints, hintsCmds);
-      hintsCmds = returnedHints ? [...hintsCmds, ...returnedHints] : hintsCmds;
-
-      // if there are many command to autocomplete
-      if (hintsCmds.length > 1) {
-        setHints(hintsCmds);
-      }
-      // if only one command to autocomplete
-      else if (hintsCmds.length === 1) {
-        const currentCmd = _.split(inputVal, " ");
-        setInputVal(
-          currentCmd.length !== 1
-            ? `${currentCmd[0]} ${currentCmd[1]} ${hintsCmds[0]}`
-            : hintsCmds[0]
-        );
-
-        setHints([]);
-      }
     }
 
     // if Ctrl + L

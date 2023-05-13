@@ -1,5 +1,6 @@
 import { createGlobalStyle, DefaultTheme } from "styled-components";
 import { normalize } from "styled-normalize";
+import styled from "styled-components";
 
 const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
   ${normalize}
@@ -67,6 +68,25 @@ const GlobalStyle = createGlobalStyle<{ theme: DefaultTheme }>`
     height: 1px;
     overflow: hidden;
   }
+`;
+
+export const HighlightSpan = styled.span`
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors?.primary};
+`;
+
+export const HighlightAlt = styled.span`
+  font-weight: 700;
+`;
+
+export const HighlightRed = styled.span`
+  font-weight: 700;
+  color: ${({ theme }) => theme.colors?.text[400]};
+`;
+
+export const HighlightSec = styled.span`
+  font-weight: normal !important;
+  color: ${({ theme }) => theme.colors?.secondary};
 `;
 
 export default GlobalStyle;

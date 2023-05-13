@@ -1,7 +1,7 @@
 {
-  "name": "Terminal Portfolio by SN",
-  "short_name": "Terminal",
-  "description": "Sat Naing's terminal portfolio website coded with ReactJS.",
+  "name": "hexedbyte - Red Teaming",
+  "short_name": "hexedbyte",
+  "description": "hexedbyte teaches red teaming and assembles red teams around the globe.",
   "start_url": "/",
   "icons": [
     {
@@ -27,16 +27,6 @@
     {
       "src": "/maskable-icons/maskable_icon_x192.png",
       "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "/maskable-icons/maskable_icon_x384.png",
-      "sizes": "384x384",
-      "type": "image/png"
-    },
-    {
-      "src": "/maskable-icons/maskable_icon_x512.png",
-      "sizes": "512x512",
       "type": "image/png"
     }
   ],

@@ -10,7 +10,7 @@ export const themeContext = createContext<
 
 function App() {
   // themes
-  const { theme, themeLoaded, setMode } = useTheme();
+  const { theme, themeLoaded } = useTheme();
   const [selectedTheme, setSelectedTheme] = useState(theme);
 
   // Disable browser's default behavior
@@ -46,13 +46,12 @@ function App() {
 
   const themeSwitcher = (switchTheme: DefaultTheme) => {
     setSelectedTheme(switchTheme);
-    setMode(switchTheme);
   };
 
   return (
     <>
-      <h1 className="sr-only" aria-label="Terminal Portfolio">
-        Terminal Portfolio
+      <h1 className="sr-only" aria-label="Terminal">
+        Terminal
       </h1>
       {themeLoaded && (
         <ThemeProvider theme={selectedTheme}>
